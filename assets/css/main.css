@@ -243,6 +243,11 @@ header nav .phone-contact .icon i {
 header nav .phone-contact .phone-number {
   border-color: #ffffff;
   color: #ffffff;
+  background-color: #535DA2;
+  transition: .3s linear;
+}
+header nav .phone-contact .phone-number:hover {
+  background-color: #14B78A;
 }
 header nav .phone-contact .menu, header nav .phone-contact .close {
   display: flex;
