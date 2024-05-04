@@ -131,6 +131,11 @@ header {
             .phone-number {
                 border-color: $white-c;
                 color: $white-c;
+                background-color: $second-c;
+                transition: .3s linear;
+                &:hover {
+                    background-color: $main-c;
+                }
             }
             .menu, .close {
                 display: flex;
