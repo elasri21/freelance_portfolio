@@ -1,0 +1,36 @@
+footer {
+    padding: 30px 0;
+    background-color: $white-c;
+    .container {
+        text-align: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        color: #888;
+        a {
+            font-weight: 600;
+            color: #888;
+            &:hover {
+                color: $second-c;
+                text-decoration: underline;
+            }
+        }
+    }
+    .up {
+        width: 35px;
+        height: 40px;
+        border-radius: 4px;
+        border: 1px solid $white-c;
+        background-color: $second-c;
+        position: fixed;
+        bottom: 30px;
+        transition: .3s linear;
+        &.hide {
+            display: none;
+        }
+        right: 30px;
+        i {
+            font-size: 20px;
+            color: $white-c;
+        }
+    }
+}

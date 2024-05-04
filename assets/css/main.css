@@ -1,0 +1,812 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+/* global rules*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+}
+
+section {
+  padding: 60px 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  transition: all .3s linear;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 300;
+  color: #888;
+}
+
+.container {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+@media (min-width: 1200px) {
+  .container {
+    margin-left: 120px !important;
+    margin-right: 120px !important;
+  }
+}
+@media (min-width: 922px) and (max-width: 1199px) {
+  .container {
+    margin-left: 80px !important;
+    margin-right: 80px !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 921px) {
+  .container {
+    margin-left: 50px !important;
+    margin-right: 50px !important;
+  }
+}
+
+.head-section {
+  padding: 10px 20px;
+  border-radius: 6px;
+  background-color: #14B78A;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
+}
+.head-section img {
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.head-section h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: capitalize;
+}
+.head-section.to-right {
+  justify-content: flex-end;
+}
+.head-section.to-right img {
+  order: 2;
+}
+.head-section.to-right h2 {
+  order: 1;
+}
+
+.c-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.align-c {
+  display: flex;
+  align-items: center;
+}
+
+.btw-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  padding: 10px 15px;
+  border-radius: 30px;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid;
+  width: fit-content;
+}
+
+/* global rules*/
+/* start header */
+header {
+  background-color: #535DA2;
+  height: 100vh;
+  position: relative;
+}
+header::before {
+  content: "";
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #14B78A;
+}
+header::after {
+  content: "";
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  left: 30%;
+  transform: translateX(-50%);
+  bottom: 20%;
+  background-color: #14B78A;
+  border-radius: 40%;
+  transform: rotate(-10deg);
+}
+header nav {
+  gap: 20px;
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  right: 30px;
+  z-index: 111;
+  border-radius: 6px;
+  background-color: #535DA2;
+  padding: 10px 20px;
+}
+@media (min-width: 768px) {
+  header nav ul {
+    display: flex !important;
+  }
+}
+@media (max-width: 767px) {
+  header nav ul {
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: calc(100% + 20px);
+    border: 1px solid #EEEEEE;
+    width: 100%;
+    background-color: #14B78A;
+    padding: 30px 20px;
+  }
+  header nav ul li a.active, header nav ul li a:hover {
+    color: #535DA2 !important;
+  }
+  header nav ul li a.active::before, header nav ul li a:hover::before {
+    width: 100%;
+    background-color: #535DA2 !important;
+  }
+}
+header nav .logo {
+  font-size: 30px;
+  font-weight: 700;
+  color: #ffffff;
+  font-style: italic;
+  position: relative;
+}
+header nav ul {
+  display: none;
+  align-items: center;
+  gap: 20px;
+}
+header nav ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ffffff;
+  position: relative;
+}
+header nav ul li a::before {
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: #14B78A;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  transition: .3s linear;
+}
+header nav ul li a.active, header nav ul li a:hover {
+  color: #14B78A;
+}
+header nav ul li a.active::before, header nav ul li a:hover::before {
+  width: 100%;
+}
+header nav .phone-contact {
+  position: relative;
+  margin-left: auto;
+  gap: 15px;
+}
+@media (min-width: 768px) {
+  header nav .phone-contact .menu, header nav .phone-contact .close {
+    display: none !important;
+  }
+}
+@media (max-width: 500px) {
+  header nav .phone-contact .icon {
+    display: none !important;
+  }
+}
+@media (max-width: 350px) {
+  header nav .phone-contact .phone-number {
+    display: none !important;
+  }
+}
+header nav .phone-contact .icon {
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+header nav .phone-contact .icon i {
+  color: #000100;
+  font-size: 20px;
+}
+header nav .phone-contact .phone-number {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+header nav .phone-contact .menu, header nav .phone-contact .close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+header nav .phone-contact .menu i, header nav .phone-contact .close i {
+  font-size: 20px;
+  color: #ffffff;
+}
+header nav .phone-contact .close {
+  display: none;
+}
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+@media (min-width: 922px) {
+  header .container .info, header .container .illus {
+    width: calc(50% - 20px) !important;
+  }
+}
+@media (max-width: 921px) {
+  header .container .illus {
+    display: none;
+  }
+}
+header .container .info {
+  width: 100%;
+}
+header .container .info .profile {
+  gap: 10px;
+  margin-bottom: 20px;
+}
+header .container .info .profile .avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+header .container .info .profile .btn {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  font-size: 22px;
+  font-weight: 700;
+  color: #000100;
+  text-transform: capitalize;
+}
+header .container .info .comment {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #14B78A;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+header .container .info a {
+  background-color: #535DA2;
+  color: #ffffff;
+  text-transform: capitalize;
+  font-size: 16px;
+  border-color: #535DA2;
+}
+header .container .info a:hover {
+  border-color: #ffffff;
+}
+header .container .illus {
+  width: 100%;
+}
+header .container .illus img {
+  width: 100%;
+}
+
+/* start header */
+/* start about */
+.about {
+  background-color: #ffffff;
+}
+.about .container {
+  gap: 30px;
+  flex-wrap: wrap;
+}
+@media (min-width: 922px) {
+  .about .container .illus, .about .container .info {
+    width: calc(50% - 30px) !important;
+  }
+}
+.about .container .illus, .about .container .info {
+  width: 100%;
+}
+.about .container .illus h3, .about .container .info h3 {
+  margin: 20px 0;
+  font-size: 20px;
+  text-transform: capitalize;
+  color: #000100;
+  font-weight: 600;
+}
+.about .container .illus p:first-of-type, .about .container .info p:first-of-type {
+  margin-bottom: 20px;
+}
+.about .container .illus {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.about .container .illus img {
+  width: 100%;
+}
+
+/* end about */
+/* start statics */
+.statics {
+  background-color: #F9F9F9;
+}
+.statics .container {
+  gap: 40px;
+  flex-wrap: wrap;
+}
+@media (min-width: 922px) {
+  .statics .container > div {
+    width: calc(50% - 20px) !important;
+  }
+}
+.statics .container > div {
+  width: 100%;
+}
+.statics .container > div.information table {
+  display: block;
+  width: 100%;
+  border-collapse: collapse;
+}
+.statics .container > div.information table thead, .statics .container > div.information table tbody {
+  display: block;
+  width: 100%;
+}
+.statics .container > div.information table thead tr, .statics .container > div.information table tbody tr {
+  display: flex;
+  width: 100%;
+  border-bottom: 2px solid #F9F9F9;
+}
+.statics .container > div.information table td, .statics .container > div.information table th {
+  padding: 8px 20px;
+  background-color: #ffffff;
+  border-radius: 4px;
+}
+.statics .container > div.information table td.title, .statics .container > div.information table th.title {
+  width: 120px;
+  border-right: 2px solid #F9F9F9;
+}
+.statics .container > div.information table td.full, .statics .container > div.information table th.full {
+  flex: 1;
+}
+.statics .container > div.facts {
+  display: flex;
+  flex-wrap: wrap;
+}
+.statics .container > div.facts > div {
+  width: calc(50% - 1px);
+  text-align: center;
+  padding: 20px 30px;
+}
+.statics .container > div.facts > div.b-top {
+  border-top: 1px solid #ffffff;
+}
+.statics .container > div.facts > div.b-bottom {
+  border-bottom: 1px solid #ffffff;
+}
+.statics .container > div.facts > div.b-left {
+  border-left: 1px solid #ffffff;
+}
+.statics .container > div.facts > div.b-right {
+  border-right: 1px solid #ffffff;
+}
+.statics .container > div.facts > div h4 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #000100;
+  margin-bottom: 10px;
+}
+.statics .container > div.facts > div p {
+  font-size: 14px;
+  font-weight: 300;
+  color: #14B78A;
+  text-transform: capitalize;
+}
+
+/* end statics */
+/* start clients */
+.clients {
+  background-color: #ffffff;
+}
+.clients .container h2 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: #000100;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+.clients .container .company-logos {
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.clients .container .company-logos .company-logo img {
+  max-width: 100%;
+}
+
+/* end clients */
+/* start services */
+.services {
+  background-color: #F9F9F9;
+}
+.services .container .services-container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+@media (min-width: 768px) {
+  .services .container .services-container .service {
+    width: calc(50% - 15px) !important;
+  }
+}
+.services .container .services-container .service {
+  width: 100%;
+  padding: 30px 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+.services .container .services-container .service .head {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #F9F9F9;
+  margin-bottom: 15px;
+}
+.services .container .services-container .service .head h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000100;
+  text-transform: capitalize;
+}
+.services .container .services-container .service .head span {
+  background-color: #535DA2;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 300;
+  position: relative;
+  overflow: hidden;
+}
+.services .container .services-container .service .head span::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #14B78A;
+  position: absolute;
+  right: -6px;
+  top: -3px;
+}
+.services .container .services-container .service a {
+  display: block;
+  text-transform: capitalize;
+  font-weight: 300;
+  color: #888;
+  font-size: 16px;
+  border-color: #888;
+  margin: 20px 0 30px 0;
+}
+.services .container .services-container .service a:hover {
+  color: #535DA2;
+  border-color: #535DA2;
+}
+.services .container .services-container .service .icon {
+  width: fit-content;
+  margin-left: auto;
+}
+.services .container .services-container .service .icon i {
+  font-size: 40px;
+  color: #000100;
+}
+
+/* end services */
+/* start projects */
+.projects {
+  background-color: #ffffff;
+}
+.projects .container .projects-container {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+@media (min-width: 922px) {
+  .projects .container .projects-container .project {
+    width: calc(33% - 20px) !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 921px) {
+  .projects .container .projects-container .project {
+    width: calc(50% - 15px) !important;
+  }
+}
+.projects .container .projects-container .project {
+  width: 100%;
+  background-color: #F9F9F9;
+  padding: 30px 20px 0 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.projects .container .projects-container .project span {
+  display: block;
+  font-size: 15px;
+  text-transform: capitalize;
+  color: #14B78A;
+  font-weight: 300;
+}
+.projects .container .projects-container .project h3 {
+  text-transform: capitalize;
+  font-weight: 700;
+  color: #000100;
+  font-size: 22px;
+  margin: 0 0 30px 0;
+}
+.projects .container .projects-container .project .project-image {
+  padding: 20px;
+  max-height: 300px;
+}
+.projects .container .projects-container .project .project-image img {
+  max-width: 100%;
+  transform: rotate(10deg);
+}
+
+/* end projects */
+/* start contact */
+.contact {
+  background-color: #F9F9F9;
+}
+.contact .container .head-section {
+  margin-bottom: 40px;
+}
+@media (min-width: 768px) {
+  .contact .container .head-section {
+    width: 50%;
+  }
+}
+.contact .container .contacts-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+@media (min-width: 922px) {
+  .contact .container .contacts-container > div {
+    width: calc(50% - 15px) !important;
+  }
+}
+.contact .container .contacts-container > div {
+  width: 100%;
+}
+.contact .container .contacts-container .legacy-contacts {
+  background-color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  border-radius: 10px;
+}
+.contact .container .contacts-container .legacy-contacts > div {
+  padding: 30px 15px;
+  width: 100%;
+}
+@media (min-width: 1106px) {
+  .contact .container .contacts-container .legacy-contacts > div {
+    width: calc(50% - 15px) !important;
+  }
+}
+@media (min-width: 922px) and (max-width: 1105px) {
+  .contact .container .contacts-container .legacy-contacts > div {
+    width: 100% !important;
+  }
+}
+@media (min-width: 568px) and (max-width: 921px) {
+  .contact .container .contacts-container .legacy-contacts > div {
+    width: calc(50% - 15px) !important;
+  }
+}
+.contact .container .contacts-container .legacy-contacts .services-box, .contact .container .contacts-container .legacy-contacts .social-media, .contact .container .contacts-container .legacy-contacts .about-desc, .contact .container .contacts-container .legacy-contacts .email {
+  margin-bottom: 20px;
+}
+.contact .container .contacts-container .legacy-contacts .social-media .media {
+  gap: 20px;
+}
+.contact .container .contacts-container .legacy-contacts .social-media .media a {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #F9F9F9;
+  border-color: #888;
+  border: 1px solid #F9F9F9;
+}
+.contact .container .contacts-container .legacy-contacts .social-media .media a i {
+  font-size: 20px;
+  color: #888;
+}
+.contact .container .contacts-container .legacy-contacts .social-media .media a:hover {
+  border-color: #535DA2;
+}
+.contact .container .contacts-container .legacy-contacts .social-media .media a:hover i {
+  color: #535DA2;
+}
+.contact .container .contacts-container .legacy-contacts h3 {
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: 600;
+  color: #000100;
+  margin-bottom: 20px;
+}
+.contact .container .contacts-container .legacy-contacts .btn {
+  display: inline-block;
+  padding: 5px 10px !important;
+  border-color: #888;
+  color: #888;
+  text-transform: capitalize;
+}
+.contact .container .contacts-container .legacy-contacts .btn.seo {
+  text-transform: uppercase;
+}
+.contact .container .contacts-container .legacy-contacts .btn.next-br {
+  margin-bottom: 10px;
+}
+.contact .container .contacts-container .legacy-contacts .btn.m-left {
+  margin-left: 10px;
+}
+.contact .container .contacts-container .form-container form {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.contact .container .contacts-container .form-container form .form-control {
+  width: 100%;
+}
+@media (min-width: 1106px) {
+  .contact .container .contacts-container .form-container form .form-control.width-50 {
+    width: calc(50% - 10px);
+  }
+  .contact .container .contacts-container .form-container form .form-control.boxes .box {
+    width: calc(25% - 7.5px) !important;
+  }
+}
+@media (min-width: 922px) and (max-width: 1105px) {
+  .contact .container .contacts-container .form-container form .form-control {
+    width: 100% !important;
+  }
+}
+@media (min-width: 568px) and (max-width: 921px) {
+  .contact .container .contacts-container .form-container form .form-control.width-50 {
+    width: calc(50% - 10px);
+  }
+  .contact .container .contacts-container .form-container form .form-control.boxes .box {
+    width: calc(25% - 7.5px) !important;
+  }
+}
+.contact .container .contacts-container .form-container form .form-control .field {
+  display: block;
+  width: 100%;
+  border: 1px solid #888;
+  border-radius: 4px;
+  outline: none;
+  padding: 10px 10px;
+  background-color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  color: #888;
+  transition: .3s linear;
+  caret-color: #535DA2;
+}
+.contact .container .contacts-container .form-container form .form-control .field::placeholder {
+  transition: .3s linear;
+  opacity: .8;
+}
+.contact .container .contacts-container .form-container form .form-control .field:focus {
+  border-color: #535DA2;
+}
+.contact .container .contacts-container .form-container form .form-control .field:focus::placeholder {
+  opacity: 0;
+}
+.contact .container .contacts-container .form-container form .form-control textarea {
+  height: 110px;
+  resize: none;
+}
+.contact .container .contacts-container .form-container form .form-control.boxes {
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.contact .container .contacts-container .form-container form .form-control.boxes .box {
+  padding: 10px 10px;
+  background-color: #ffffff;
+  border-radius: 3px;
+  border: 1px solid #888;
+  text-align: center;
+  width: calc(50% - 5px);
+}
+.contact .container .contacts-container .form-container form .form-control.boxes .box i {
+  font-size: 16px;
+  color: #14B78A;
+}
+.contact .container .contacts-container .form-container form .form-control.boxes .box p {
+  font-size: 16px;
+  font-weight: 300;
+  color: #888;
+  text-transform: capitalize;
+  margin-top: 10px;
+}
+.contact .container .contacts-container .form-container form .submit {
+  width: 100px;
+  margin-left: auto;
+  background-color: #14B78A;
+  border-color: #14B78A;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .3s linear;
+}
+.contact .container .contacts-container .form-container form .submit:hover {
+  background-color: #535DA2;
+  border-color: #535DA2;
+}
+
+/* end contact */
+footer {
+  padding: 30px 0;
+  background-color: #ffffff;
+}
+footer .container {
+  text-align: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: #888;
+}
+footer .container a {
+  font-weight: 600;
+  color: #888;
+}
+footer .container a:hover {
+  color: #535DA2;
+  text-decoration: underline;
+}
+footer .up {
+  width: 35px;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid #ffffff;
+  background-color: #535DA2;
+  position: fixed;
+  bottom: 30px;
+  transition: .3s linear;
+  right: 30px;
+}
+footer .up.hide {
+  display: none;
+}
+footer .up i {
+  font-size: 20px;
+  color: #ffffff;
+}
+
+/*# sourceMappingURL=main.css.map */

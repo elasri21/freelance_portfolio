@@ -1,0 +1,95 @@
+/* global rules*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: $family;
+}
+section {
+    padding: 60px 0;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    transition: all .3s linear;
+}
+p {
+    font-size: 16px;
+    font-weight: 300;
+    color: #888;
+}
+.container {
+    @media (min-width: 1200px) {
+        margin-left: 120px !important;
+        margin-right: 120px !important;
+    }
+    @media (min-width: 922px) and (max-width: 1199px) {
+        margin-left: 80px !important;
+        margin-right: 80px !important;
+    }
+    @media (min-width: 768px) and (max-width: 921px) {
+        margin-left: 50px !important;
+        margin-right: 50px !important;
+    }
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.head-section {
+    padding: 10px 20px;
+    border-radius: 6px;
+    background-color: $main-c;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+    img {
+        display: block;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+    }
+    h2 {
+        font-size: 26px;
+        font-weight: 700;
+        color: $white-c;
+        text-transform: capitalize;
+    }
+    &.to-right {
+        justify-content: flex-end;
+        img {
+            order: 2;
+        }
+        h2 {
+            order: 1;
+        }
+    }
+}
+.c-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.align-c {
+    display: flex;
+    align-items: center;
+}
+.btw-flex {
+    display: flex;
+    justify-content: space-between;
+}
+.btn {
+    padding: 10px 15px;
+    border-radius: 30px;
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid;
+    width: fit-content;
+}
+/* global rules*/
